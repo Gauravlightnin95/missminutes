@@ -1,0 +1,16 @@
+Priya: Good morning everyone. Let's start the weekly product sync. First item — the login bug reported by support.
+Rahul: I reproduced it. The session token expires after 15 minutes of inactivity, and the app does not refresh it.
+Priya: How long will the fix take?
+Rahul: I will fix it by Thursday and push a patch on Friday morning.
+Meera: Support agreed that we should email affected customers once the fix is live.
+Priya: Good. Second item — the pricing page redesign.
+Arjun: The new layout is ready. Marketing approved the copy. We decided to go with the three-tier layout.
+Meera: I will finalize the FAQs and send them to legal for review by Monday.
+Arjun: Legal has to sign off before we publish, so we should target next Wednesday for launch.
+Priya: Agreed. Third item — the Q3 customer survey.
+Meera: The survey draft is ready. We agreed to shorten it to 10 questions maximum.
+Arjun: I will set up the email campaign in Mailchimp and schedule it for the first week of next month.
+Priya: Perfect. I will book a review meeting with the leadership team to share the survey results.
+Meera: Also, a follow-up — the mobile team needs to check the crash reports from the last release.
+Arjun: The mobile team will look into the crash reports this week.
+Priya: That's all for today. Meeting adjourned.
