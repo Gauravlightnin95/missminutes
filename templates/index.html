@@ -4,44 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MinutesMate — Automated Meeting Minutes Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/static/css/style.css" />
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">MINUTES<span>/</span>MATE</div>
-    <div class="status"><i></i>READY — PSID 103</div>
+    <div class="brand">Minutes<span class="amp">/</span>Mate</div>
+    <div class="status">Automated Meeting Minutes · PSID 103</div>
   </header>
 
   <section class="hero">
-    <div class="hero-icon">📝</div>
+    <div class="hero-icon" aria-hidden="true">MM</div>
     <div>
-      <div class="eyebrow">Automated Meeting Minutes Generator</div>
-      <h1 class="hero-title">From raw transcript to ready minutes in one click</h1>
-      <p class="hero-sub">Paste a transcript or upload a recording — get an executive summary, key decisions and a trackable action-item table.</p>
+      <div class="eyebrow">Meeting transcripts, turned into minutes</div>
+      <h1 class="hero-title">Every meeting, properly minuted</h1>
+      <p class="hero-sub">Paste a transcript or upload a recording — receive an executive summary, key decisions, and a trackable action-item table, ready to share.</p>
     </div>
   </section>
 
   <div class="mode-chip" id="modeChip">
-    <i></i><span id="modeChipText">OFFLINE MODE — no key, no internet, no cost</span>
+    <i></i><span id="modeChipText">Offline mode — runs entirely on this computer, no API key needed</span>
   </div>
 
   <main class="layout">
     <!-- ================= INPUT ================= -->
     <section class="card input-card">
-      <h3>Meeting transcript</h3>
-      <p class="hint">Choose how your meeting text gets in. Nothing is uploaded anywhere in offline mode.</p>
-      <div class="pills">
-        <span class="pill">Paste text</span>
-        <span class="pill">Upload audio (Whisper)</span>
-        <span class="pill">Sample included</span>
-      </div>
+      <div class="section-label"><span>01</span> Transcript input</div>
+      <p class="hint">Choose how your meeting text gets in. In offline mode nothing leaves this computer.</p>
 
       <label class="field-label" for="meetingTitle">Meeting title</label>
       <input id="meetingTitle" type="text" value="Weekly Product Sync" autocomplete="off" />
 
       <div class="tabs">
-        <button class="tab active" data-tab="paste" type="button">📋 Paste transcript</button>
-        <button class="tab" data-tab="audio" type="button">🎙️ Upload audio</button>
+        <button class="tab active" data-tab="paste" type="button">Paste transcript</button>
+        <button class="tab" data-tab="audio" type="button">Upload audio</button>
       </div>
 
       <!-- Paste panel -->
@@ -61,9 +59,9 @@
           <div>
             <label class="field-label" for="whisperModel">Whisper model</label>
             <select id="whisperModel">
-              <option value="tiny">tiny (fastest, lowest RAM)</option>
-              <option value="base" selected>base (recommended)</option>
-              <option value="small">small (better accuracy)</option>
+              <option value="tiny">tiny — fastest, lowest RAM</option>
+              <option value="base" selected>base — recommended</option>
+              <option value="small">small — better accuracy</option>
             </select>
           </div>
           <div>
@@ -71,27 +69,27 @@
             <input id="language" type="text" placeholder="e.g. en" autocomplete="off" />
           </div>
         </div>
-        <button class="btn" id="transcribeBtn" type="button">🎙️ Transcribe audio</button>
+        <button class="btn" id="transcribeBtn" type="button">Transcribe audio</button>
         <textarea id="audioTranscript" rows="7" placeholder="Transcribed text appears here — review and edit before generating minutes."></textarea>
       </div>
 
       <details class="settings">
-        <summary>⚙️ Optional settings</summary>
-        <label class="field-label" for="apiKey">OpenAI API key (optional — enables GPT mode)</label>
+        <summary>Optional settings</summary>
+        <label class="field-label" for="apiKey">OpenAI API key — enables GPT mode</label>
         <input id="apiKey" type="password" placeholder="sk-…" autocomplete="off" />
         <label class="field-label" for="gptModel">GPT model</label>
         <input id="gptModel" type="text" value="gpt-4o-mini" autocomplete="off" />
       </details>
 
-      <button class="btn primary full" id="generateBtn" type="button">✨ Generate Minutes</button>
+      <button class="btn primary full" id="generateBtn" type="button">Generate minutes</button>
       <div id="status" class="status-msg" role="status"></div>
     </section>
 
     <!-- ================= RESULTS ================= -->
     <section class="results" id="results">
       <div class="card placeholder-card">
-        <h3>Your minutes will appear here</h3>
-        <p class="hint">Fill in a transcript on the left and press <b>Generate Minutes</b>.</p>
+        <div class="section-label"><span>02</span> Generated minutes</div>
+        <p class="hint">Fill in a transcript on the left and press <b>Generate minutes</b>. The summary, decisions and action items will appear here.</p>
         <div class="pills">
           <span class="pill">Summary</span><span class="pill">Decisions</span>
           <span class="pill">Action items</span><span class="pill">Export .md / .docx</span>
@@ -103,7 +101,7 @@
   <footer class="foot">
     Privacy: in offline mode the transcript is processed only on this computer. If an OpenAI key is set,
     transcript text is sent to the OpenAI API. Get permission before recording or sharing meeting content.
-    — MinutesMate, PSID 103 (Gaurav Kumar · ABES Engineering College)
+    — MinutesMate · PSID 103 · Gaurav Kumar, ABES Engineering College
   </footer>
 
   <script src="/static/js/app.js"></script>
